@@ -253,6 +253,9 @@ STYLE = ("Japanese gekiga manga illustration style (hand-drawn comic art, NOT ph
          "accurate 1972 period details, ONE single full-frame illustration showing one continuous scene (absolutely NO comic panels, "
          "NO split screen, NO inset frames, NO borders), dramatic high contrast cinematic lighting, serious documentary mood, "
          "not gory (no blood, no wounds, no corpses, no body parts), no speech bubbles, no text, no letters, no captions, no logos")
+# 本編20分以上にするため少しゆっくり読む
+TTS_SPEED = 0.91
+
 READINGS = {"ナンド": "ナンド", "ビジンティン": "ビジンティン", "牧童": "ぼくどう"}
 STAMPS = {}
 for _c, _t, _p, _i in LINES:

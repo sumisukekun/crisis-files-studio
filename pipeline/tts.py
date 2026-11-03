@@ -41,7 +41,7 @@ def synth(text):
     for k, v in READ.items():
         text = text.replace(k, v)
     q = json.loads(post(f"/audio_query?speaker={a.speaker}&text={urllib.parse.quote(text)}", b""))
-    q.update(speedScale=0.97, intonationScale=0.9, prePhonemeLength=0.05, postPhonemeLength=0.05,
+    q.update(speedScale=getattr(ep, "TTS_SPEED", 0.97), intonationScale=0.9, prePhonemeLength=0.05, postPhonemeLength=0.05,
              outputSamplingRate=SR, outputStereo=False)
     wav = post(f"/synthesis?speaker={a.speaker}", json.dumps(q).encode())
     with wave.open(io.BytesIO(wav)) as w:

@@ -1,0 +1,95 @@
+name: build-episode
+
+# GitHub の「Actions」→「build-episode」→「Run workflow」で、エピソード名を入れて実行する。
+on:
+  workflow_dispatch:
+    inputs:
+      episode:
+        description: "episodes/ のフォルダ名（例 ep12_andes）"
+        required: true
+      steps:
+        description: "実行する工程（images,tts,assemble,short,upload のカンマ区切り）"
+        default: "images,tts,assemble,short"
+      publish_at:
+        description: "予約公開日時（例 2026-11-05T19:00:00+09:00）。空なら非公開のまま"
+        default: ""
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    services:
+      voicevox:
+        image: voicevox/voicevox_engine:cpu-latest
+        ports: ["50021:50021"]
+    env:
+      EP: ${{ inputs.episode }}
+      STEPS: ${{ inputs.steps }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: setup
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-noto-cjk fonts-noto-cjk-extra
+          pip install -q -r requirements.txt
+
+      # 途中まで作った画像・音声を次回に引き継ぐ（同じエピソードなら続きから）
+      - name: restore build cache
+        uses: actions/cache/restore@v4
+        with:
+          path: build/${{ inputs.episode }}
+          key: build-${{ inputs.episode }}-${{ github.run_id }}
+          restore-keys: build-${{ inputs.episode }}-
+
+      - name: images
+        if: contains(env.STEPS, 'images')
+        run: python pipeline/images.py "$EP" --workers 6
+
+      - name: narration (VOICEVOX)
+        if: contains(env.STEPS, 'tts')
+        run: |
+          for i in $(seq 1 60); do curl -sf http://localhost:50021/version && break; sleep 5; done
+          python pipeline/tts.py "$EP"
+
+      - name: assemble
+        if: contains(env.STEPS, 'assemble')
+        run: |
+          python pipeline/subs.py "$EP"
+          python pipeline/thumb.py "$EP"
+          python pipeline/assemble.py "$EP"
+
+      - name: short
+        if: contains(env.STEPS, 'short')
+        run: python pipeline/short.py "$EP"
+
+      - name: upload to YouTube
+        if: contains(env.STEPS, 'upload')
+        run: python pipeline/upload.py "$EP" --publish-at "${{ inputs.publish_at }}"
+
+      - name: save build cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: build/${{ inputs.episode }}
+          key: build-${{ inputs.episode }}-${{ github.run_id }}
+
+      # 確認・手動アップロード用に、完成品をダウンロードできるようにする
+      - name: artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ inputs.episode }}
+          retention-days: 14
+          if-no-files-found: ignore
+          path: |
+            build/${{ inputs.episode }}/episode_up.mp4
+            build/${{ inputs.episode }}/short.mp4
+            build/${{ inputs.episode }}/thumbnail.jpg
+            build/${{ inputs.episode }}/subtitles.srt
+            build/${{ inputs.episode }}/chapters.txt
+            build/${{ inputs.episode }}/uploaded.json

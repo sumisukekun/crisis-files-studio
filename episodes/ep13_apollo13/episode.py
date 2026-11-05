@@ -264,7 +264,7 @@ LINES = [
 # ---- 以下、パイプライン用の設定 ----
 SCENE = "deep space between the Earth and the Moon / NASA mission control Houston, April 1970"
 STYLE = ("Japanese gekiga manga illustration style (hand-drawn comic art, NOT photorealistic), bold black ink linework with cross-hatching, "
-         "painted full colors, deep black space with harsh white sunlight, cold blue cabin light, green console glow in mission control, "
+         "painted full colors, deep black space with harsh white sunlight, cold blue cabin light, "
          "accurate 1970 period details, ONE single full-frame illustration showing one continuous scene (absolutely NO comic panels, "
          "NO split screen, NO inset frames, NO borders), dramatic high contrast cinematic lighting, serious documentary mood, "
          "not gory, no speech bubbles, no text, no letters, no captions, no logos, no flags with text")

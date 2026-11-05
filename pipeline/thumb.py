@@ -21,7 +21,7 @@ d=ImageDraw.Draw(img)
 def vtext(x,y,text,font,fill,stroke=12,gap=0.96):
     for ch in text:
         w=d.textlength(ch,font=font); d.text((x-w/2,y),ch,font=font,fill=fill,stroke_width=stroke,stroke_fill=(0,0,0)); y+=font.size*gap
-vtext(1790,40,C["big"],ImageFont.truetype(SERIF,210),(250,250,250))
+vtext(1790,40,C["big"],ImageFont.truetype(SERIF,min(210,int(860/(len(C["big"])*0.96)))),(250,250,250))
 vtext(1500,120,C["red"],ImageFont.truetype(SERIF,180),RED,stroke=14,gap=0.98)
 f_sub=ImageFont.truetype(SANS,66); sub=C["sub"]
 sw=d.textlength(sub,font=f_sub); d.rectangle([W-sw-90,H-140,W,H-40],fill=(0,0,0)); d.text((W-sw-55,H-136),sub,font=f_sub,fill=(255,255,255))

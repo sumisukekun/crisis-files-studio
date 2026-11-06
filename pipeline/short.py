@@ -83,15 +83,16 @@ def frame(n, text, end=False):
     bg.paste(fg, (0, 420))
     d = ImageDraw.Draw(bg)
     # header
-    ctext(d, 110, CFG["h1"], f_t1, (255, 255, 255), 8)
-    ctext(d, 235, CFG["h2"], f_t1, RED, 8)
+    ctext(d, 110, CFG["h1"], ImageFont.truetype(SERIF, min(92, int((W - 70) / max(1, len(CFG["h1"]))))), (255, 255, 255), 8)
+    ctext(d, 235, CFG["h2"], ImageFont.truetype(SERIF, min(92, int((W - 70) / max(1, len(CFG["h2"]))))), RED, 8)
     if n in STAMP or any(n > k for k in STAMP):
         k = max([k for k in STAMP if k <= n], default=None)
         if k:
             d.text((50, 1160), STAMP[k], font=f_stamp, fill=AMBER, stroke_width=8, stroke_fill=(0, 0, 0))
     if end:
         d.rectangle([0, 1340, W, 1640], fill=(0, 0, 0))
-        ctext(d, 1370, CFG["e1"], f_end1, (255, 255, 255), 0)
+        fe = ImageFont.truetype(SERIF, min(84, int((W - 90) / max(1, len(CFG["e1"])))))
+        ctext(d, 1370 + (84 - fe.size) // 2, CFG["e1"], fe, (255, 255, 255), 0)
         ctext(d, 1510, CFG["e2"], f_end2, AMBER, 0)
     else:
         rows = wrap(text, f_sub, W - 120, d)

@@ -9,6 +9,8 @@ import sys
 from common import load
 ep, WORK = load(sys.argv[1])
 CFG = dict(ep.SHORT, out="short.mp4")
+if len(sys.argv) > 2:  # 追加ショート: python pipeline/short.py <ep> <alt.json>
+    CFG.update(json.load(open(os.path.abspath(sys.argv[2]))))
 os.chdir(WORK)
 SEL = CFG["sel"]
 GAP = 0.2
@@ -20,7 +22,7 @@ AMBER = (255, 170, 60)
 STAMP = {int(k): v for k, v in CFG["stamp"].items()}
 
 T = json.load(open("timing.json"))["lines"]
-work = "_short"
+work = "_short" + CFG.get("suffix", "")
 shutil.rmtree(work, ignore_errors=True)
 os.makedirs(work)
 
@@ -115,9 +117,9 @@ for i, (n, a, b) in enumerate(spans):
                     "-frames:v", str(fr), "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", out], check=True)
     clips.append(out)
     if i == 0:
-        img.save("short_preview_first.jpg", quality=85)
+        img.save(f"short_preview_first{CFG.get('suffix','')}.jpg", quality=85)
     if is_last:
-        img.save("short_preview_last.jpg", quality=85)
+        img.save(f"short_preview_last{CFG.get('suffix','')}.jpg", quality=85)
 
 with open(f"{work}/list.txt", "w") as f:
     for c in clips:

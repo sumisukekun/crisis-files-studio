@@ -9,8 +9,10 @@ import sys
 from common import load
 ep, WORK = load(sys.argv[1])
 CFG = dict(ep.SHORT, out="short.mp4")
+E2_NEW = "▶ 続きは本編で\n画面下の「関連動画」から見られます"
 if len(sys.argv) > 2:  # 追加ショート: python pipeline/short.py <ep> <alt.json>
     CFG.update(json.load(open(os.path.abspath(sys.argv[2]))))
+if "固定コメント" in CFG.get("e2", ""): CFG["e2"] = E2_NEW
 os.chdir(WORK)
 SEL = CFG["sel"]
 GAP = 0.2
@@ -93,7 +95,12 @@ def frame(n, text, end=False):
         d.rectangle([0, 1340, W, 1640], fill=(0, 0, 0))
         fe = ImageFont.truetype(SERIF, min(84, int((W - 90) / max(1, len(CFG["e1"])))))
         ctext(d, 1370 + (84 - fe.size) // 2, CFG["e1"], fe, (255, 255, 255), 0)
-        ctext(d, 1510, CFG["e2"], f_end2, AMBER, 0)
+        e2 = CFG["e2"].split("\n")
+        f2 = ImageFont.truetype(SANS, min(60, int((W - 80) / max(1, len(e2[0])))))
+        ctext(d, 1480, e2[0], f2, AMBER, 0)
+        if len(e2) > 1:
+            f3 = ImageFont.truetype(SANS, min(46, int((W - 80) / max(1, len(e2[1])))))
+            ctext(d, 1480 + f2.size + 22, e2[1], f3, (255, 255, 255), 0)
     else:
         rows = wrap(text, f_sub, W - 120, d)
         y = 1370

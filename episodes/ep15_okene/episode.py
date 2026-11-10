@@ -27,15 +27,15 @@ CHAPTERS = [
 
 LINES = [
     # ch1 海の底の暗闇
-    (1, '2013年5月。アフリカ西部、ナイジェリアの沖合。', 's', SEA),
-    (1, '水深およそ30メートルの海の底に、1隻の船が、ひっくり返ったまま沈んでいた。', 'l', TUG + ' lying upside down on the dark sandy sea floor, 30 meters deep, eerie'),
+    (1, '2013年5月。アフリカ西部、ナイジェリア沖で、1隻のタグボートが転覆し、沈没した。', 's', SEA),
+    (1, '水深およそ30メートル。ひっくり返ったまま海の底に沈んだ、その沈没船の中。', 'l', TUG + ' lying upside down on the dark sandy sea floor, 30 meters deep, eerie'),
     (1, '船の中は、光ひとつない、完全な暗闇。', 'l', DARK + ', no light at all'),
     (1, '冷たい海水が、ほとんどの部屋を満たしていた。', 'c', 'cold black water filling a narrow ship corridor upside down, floating debris'),
-    (2, 'その暗闇の中で、ひとりの男が、まだ息をしていた。', 's', 'close-up of ' + OKENE + ' in near darkness, only his face above black water, breathing'),
-    (2, '彼がいたのは、天井近くにわずかに残った、空気のすき間だった。', 'l', 'a small pocket of air trapped near the ceiling of a flooded upside-down cabin, a man\'s head above the water'),
+    (2, 'その暗闇の中で、ひとりの男、ハリソン・オケネが、まだ息をしていた。', 's', 'close-up of ' + OKENE + ' in near darkness, only his face above black water, breathing'),
+    (2, '彼がいたのは、天井近くにわずかに残った空気のすき間、エアポケットだった。', 'l', 'a small pocket of air trapped near the ceiling of a flooded upside-down cabin, a man\'s head above the water'),
     (2, '水面から天井までは、わずか1メートルあまり。', 'l', OKW + ' pressing his face toward the ceiling in a tiny air pocket, dark'),
     (2, '外の世界は、誰も、彼が生きていることを知らなかった。', 'c', 'the lonely surface of a grey sea above a sinking spot, no ships, empty'),
-    (3, '男の名は、ハリソン・オケネ。29歳。船のコックだった。', 's', 'portrait of ' + OKENE + ', smiling, ship cook uniform, before the accident'),
+    (3, 'オケネは29歳。この船のコックだった。', 's', 'portrait of ' + OKENE + ', smiling, ship cook uniform, before the accident'),
     (3, '海の底に閉じ込められた彼は、およそ60時間、暗闇の中で生き続けた。', 'l', OKW + ' sitting on a mattress in a dark flooded cabin, hugging his knees'),
     (3, 'なぜ、彼だけが生き延びることができたのか。', 'l', 'a diver\'s head torch beam cutting through dark water inside a sunken ship, mysterious'),
     (3, 'これは、海の底で実際に起きた、奇跡の記録である。', 'c', 'a dark archive desk with a case file and a photo of a tugboat clipped to it, single desk lamp, no readable text'),

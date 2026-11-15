@@ -18,11 +18,13 @@ from common import GAPS, load
 ap = argparse.ArgumentParser()
 ap.add_argument("episode")
 ap.add_argument("--url", default="http://localhost:50021")
-ap.add_argument("--speaker", type=int, default=13)  # 青山龍星
+ap.add_argument("--speaker", type=int, default=None)  # 未指定なら episode の TTS_SPEAKER（既定13=青山龍星）
 a = ap.parse_args()
 ep, work = load(a.episode)
 SR, LEAD = 24000, 1.5
 READ = getattr(ep, "READINGS", {})
+if a.speaker is None:
+    a.speaker = getattr(ep, "TTS_SPEAKER", 13)
 
 
 def post(path, body=None, ctype="application/json"):
@@ -41,7 +43,7 @@ def synth(text):
     for k, v in READ.items():
         text = text.replace(k, v)
     q = json.loads(post(f"/audio_query?speaker={a.speaker}&text={urllib.parse.quote(text)}", b""))
-    q.update(speedScale=getattr(ep, "TTS_SPEED", 0.97), intonationScale=0.9, prePhonemeLength=0.05, postPhonemeLength=0.05,
+    q.update(speedScale=getattr(ep, "TTS_SPEED", 0.97), intonationScale=getattr(ep, "TTS_INTONATION", 0.9), prePhonemeLength=0.05, postPhonemeLength=0.05,
              outputSamplingRate=SR, outputStereo=False)
     wav = post(f"/synthesis?speaker={a.speaker}", json.dumps(q).encode())
     with wave.open(io.BytesIO(wav)) as w:

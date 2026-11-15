@@ -302,7 +302,9 @@ STYLE = ("Japanese gekiga manga illustration style (hand-drawn comic art, NOT ph
          "ONE single full-frame illustration showing one continuous scene (absolutely NO comic panels, "
          "NO split screen, NO inset frames, NO borders), dramatic high contrast cinematic lighting, serious documentary mood, "
          "not gory, no blood, no wounds, no injuries shown, no body parts, no corpses, no speech bubbles, no text, no letters, no captions, no logos")
-TTS_SPEED = 0.86
+TTS_SPEED = 1.0
+TTS_SPEAKER = 12  # 白上虎太郎（ふつう）— 11/15 ユーザー指定。以後の回もこれ
+TTS_INTONATION = 1.05
 READINGS = {"尿": "にょう", "鈍い": "にぶい", "義手": "ぎしゅ", "幻": "まぼろし", "一口": "ひとくち"}
 STAMPS = {}
 for _c, _t, _p, _i in LINES:
@@ -328,7 +330,7 @@ META = {"title": "【実話】岩に右腕を挟まれ127時間…水も尽き�
                         "▼前回：{PREV}\n\n"
                         "▼参考資料\n・Aron Ralston『Between a Rock and a Hard Place』（2004年）／邦題『奇跡の6日間』\n"
                         "・映画『127時間』（2010年）\n・各種報道・インタビュー\n\n"
-                        "ナレーション：VOICEVOX:青山龍星\n\n"
+                        "ナレーション：VOICEVOX:白上虎太郎\n\n"
                         "クライシス・ファイル〜極限サバイバル劇画〜\n実際に起きた極限のサバイバルを、劇画で記録するチャンネルです。\n"
                         "チャンネル登録：https://www.youtube.com/@CrisisFiles_Survival\n\n"
                         "#実話 #127時間 #遭難 #サバイバル #アーロンラルストン #ブルージョンキャニオン #クライシスファイル"),

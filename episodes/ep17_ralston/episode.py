@@ -3,6 +3,7 @@
 # 表現ルール: 腕の切断は直接描かない（血・傷口・切断面は一切描写しない）。右腕は岩に隠れている／事後は白い布で包んだ状態。
 ARON = ("Aron, a 27-year-old American man with short brown hair and light stubble, "
         "wearing a faded BLUE T-shirt, BEIGE hiking shorts, brown hiking boots and a small BLACK backpack")
+ARONF = "Aron, a 27-year-old American man with short brown hair and light stubble"
 ARONT = ARON + (", his right hand and forearm completely hidden behind a huge boulder wedged in the narrow canyon "
                 "(his right arm disappears behind the rock), exhausted, dusty")
 ARONW = ARON + ", gaunt, sunburned and exhausted, his right arm ending in a thick bundle of white cloth held against his chest, no blood"
@@ -51,12 +52,12 @@ LINES = [
     # ch2 ひとりの冒険者
     (4, 'アーロン・ラルストンは、1975年、アメリカのオハイオ州で生まれた。', 's', 'a 1980s American suburban house with a big tree, autumn' + NOP),
     (4, '子どものころに家族でコロラド州へ移り住み、ロッキー山脈の自然の中で育った。', 'l', 'a boy hiking with a backpack on a trail in the Colorado Rocky Mountains, pine forest, alone on the trail'),
-    (4, '大学では機械工学を学び、卒業後は、エンジニアとして働いていた。', 'l', ARON + ' in a white shirt working at a desk in a 1990s engineering office with a computer,' + ALONE),
+    (4, '大学では機械工学を学び、卒業後は、エンジニアとして働いていた。', 'l', ARONF + ' in a white shirt working at a desk in a 1990s engineering office with a computer,' + ALONE),
     (4, 'しかし、彼の心は、いつも山にあった。', 'l', ARON + ' looking out of an office window at distant snowy mountains,' + ALONE),
     (4, '休みの日には、雪山に登り、谷を歩き、川を下った。', 'l', ARON + ' kayaking down a mountain river on a weekend,' + ALONE),
     (5, 'やがて彼は、会社をやめ、山の町アスペンに移り住んだ。', 's', 'the small mountain town of Aspen, Colorado, surrounded by snowy peaks' + NOP),
     (5, '登山店で働きながら、休みのたびに、山や谷へ出かけた。', 'l', ARON + ' working in an outdoor gear shop, holding climbing rope,' + ALONE),
-    (5, '彼の目標は、コロラド州にある標高4200メートル級の山、59座すべてに、冬に、たった1人で登ることだった。', 'l', ARON + ' in a winter jacket climbing a snowy Colorado peak alone, wind and snow,' + ALONE),
+    (5, '彼の目標は、コロラド州にある標高4200メートル級の山、59座すべてに、冬に、たった1人で登ることだった。', 'l', ARONF + ' in a winter jacket climbing a snowy Colorado peak alone, wind and snow,' + ALONE),
     (5, 'それは、まだ誰も成しとげたことのない挑戦だった。', 'l', 'a range of snowy 14,000-foot Colorado peaks at sunrise' + NOP),
     (6, 'アーロンは、1人で行動することを好んだ。', 's', ARON + ' hiking alone on a high ridge, small figure,' + ALONE),
     (5, '冬の雪山に1人で登るのは、危険と隣り合わせだ。雪崩に巻きこまれたこともあった。', 'l', 'a small avalanche sweeping down a snowy slope in the Colorado mountains, a tiny figure at the edge,' + ALONE),
@@ -124,10 +125,14 @@ LINES = [
     (16, '小さなナイフで、岩を少しずつ削れば、腕を抜くすき間ができるかもしれない。', 'l', 'close-up of a small knife blade scraping the surface of a brown boulder, rock dust falling' + NOP),
     (16, '彼は、何時間も、何時間も、岩を削り続けた。', 'l', ARONT + ', chipping at the boulder with a small knife, sweating,' + ALONE),
     (16, 'しかし、削れたのは、ほんのわずか。岩は、ナイフよりも、はるかに硬かった。', 'l', 'a tiny pile of rock dust on the sand under the boulder' + NOP),
+    (16, '岩をたたく、カツ、カツという音だけが、静かな谷に響き続けた。', 'l', ARONT + ', tapping the boulder with a small knife, dust in a beam of light,' + ALONE),
+    (16, 'もし腕が抜けても、すぐに歩けるように、彼は、荷物をまとめておいた。', 'l', ARONT + ', packing gear neatly into his small black backpack with his left hand,' + ALONE),
     (17, 'それどころか、ナイフの刃が、どんどんすり減っていった。', 's', 'close-up of a dull, worn small knife blade in a dusty hand' + NOP),
     (17, '昼になると、細い空のすき間から、日の光が差しこんできた。', 'l', 'a narrow shaft of sunlight entering ' + SLOT + ', warm glow' + NOP),
     (17, '日の光が当たるのは、1日に、わずか15分ほど。', 'l', ARONT + ', turning his face up into a brief shaft of sunlight, eyes closed,' + ALONE),
     (17, 'そのわずかな時間を、アーロンは、何よりも楽しみにしていた。', 'l', 'close-up of ' + ARON + '\'s face in warm sunlight, a small smile,' + ALONE),
+    (17, '日が当たらない時間、谷の底は、薄暗く、ひんやりとしていた。', 'l', SLOT + ', dim and cool, deep shadows' + NOP),
+    (17, '空の青さと、日の光のありがたさを、彼は、このとき初めて知ったという。', 'c', 'looking up at a bright blue strip of sky between red canyon walls' + NOP),
     (18, '水は、少しずつ、少しずつ飲んだ。', 's', ARONT + ', taking a tiny sip from a small water bottle,' + ALONE),
     (18, '一度に飲んでしまえば、あとは何も残らない。', 'l', 'close-up of a water bottle with only a little water left in it' + NOP),
     (18, '彼は、エンジニアらしく、残りの量を計算し、飲む量を決めた。', 'l', ARONT + ', looking carefully at the water bottle, calculating,' + ALONE),
@@ -151,6 +156,7 @@ LINES = [
     (21, 'しかし、谷の底にいる彼に、気づく人はいない。', 'l', 'looking down from the sky at the desert at night, a tiny dark crack of a canyon' + NOP),
     (21, 'アーロンは、自分の時計で、時間を確かめ続けた。', 'l', 'close-up of a digital wristwatch glowing on a dusty left wrist at night, no readable numbers' + NOP),
     (21, '時間の感覚を失わないこと。それが、正気を保つための方法だった。', 'c', ARONT + ', staring at his glowing watch in the dark,' + ALONE),
+    (21, '朝が来るたびに、彼は、今日が何日目なのかを、声に出して確かめた。', 'l', ARONT + ', whispering to himself at dawn, counting on his fingers,' + ALONE),
 
     # ch8 水が尽きる
     (22, '4日目。', 's', ARONT + ', at dawn, gaunt and pale,' + ALONE),
@@ -162,6 +168,8 @@ LINES = [
     (23, '最後の一口を飲み終えたとき、アーロンは、しばらく空のボトルを見つめていた。', 'l', ARONT + ', holding an empty water bottle, staring at it,' + ALONE),
     (23, 'ブリトーも、もう残っていない。', 'l', 'an empty crumpled food wrapper on the sand' + NOP),
     (23, 'のどの渇きは、痛みよりも、つらかったという。', 'l', 'close-up of ' + ARON + '\'s cracked dry lips,' + ALONE),
+    (23, '口の中は乾ききり、舌が、上あごにはりつくほどだった。', 'l', 'close-up of ' + ARON + '\'s parched mouth and cracked lips,' + ALONE),
+    (23, 'アーロンは、空のボトルを見つめながら、冷たい水を飲む夢を、何度も見た。', 'l', 'a dreamlike vision of cold clear water pouring into a glass, soft light' + NOP),
     (24, '体から、水分が、どんどん失われていく。', 's', ARONT + ', sweating in the afternoon heat, dazed,' + ALONE),
     (24, '人は、水を飲まずに生きられるのは、わずか数日と言われている。', 'l', 'a desert sun blazing above a narrow slot canyon, heat haze' + NOP),
     (24, 'アーロンは、生きのびるために、自分の尿を飲んだ。', 'l', ARONT + ', holding a bottle with yellowish liquid, grimacing,' + ALONE),
@@ -183,6 +191,8 @@ LINES = [
     (27, '月曜日になっても、アーロンが出勤してこない。', 'l', 'an empty spot behind a shop counter, a work apron hanging unused' + NOP),
     (27, '連絡もつかない。同僚たちは、彼の母親に知らせた。', 'l', 'a woman on the phone in a Colorado kitchen, worried'),
     (27, '母親は、すぐに警察に届け出た。しかし、どこを探せばいいのか、誰にもわからなかった。', 'c', 'police officers looking at a large map of the western United States spread on a table, no readable text'),
+    (27, '母親は、息子のメールを調べ、ユタ州の地名を手がかりに見つけ出した。', 'l', 'a worried mother looking at an old desktop computer screen at night, screen text blurred and unreadable'),
+    (27, 'こうして、捜索の目は、少しずつ、ユタ州の砂漠へと向けられていった。', 'c', 'a map of Utah with red canyons, a hand pointing at the desert, no readable text'),
 
     # ch10 ビデオの別れ
     (28, 'アーロンは、ビデオカメラを取り出した。', 's', ARONT + ', holding a small 2003 camcorder with his left hand,' + ALONE),
@@ -198,6 +208,7 @@ LINES = [
     (30, '意識が、少しずつ、遠のいていく。', 'l', ARONT + ', eyes half closed in the dark, blurry vision effect,' + ALONE),
     (30, 'アーロンは、もう朝は来ないかもしれないと思った。', 'l', 'stars in a thin strip of night sky above a canyon, very cold' + NOP),
     (30, 'それでも彼は、夜明けまで、時計の数字を見つめ続けた。', 'c', 'close-up of a glowing digital watch in total darkness, no readable numbers' + NOP),
+    (30, '寒さで、体の震えが止まらない。歯が、ガチガチと鳴り続けた。', 'l', ARONT + ', teeth chattering, shaking with cold in the dark,' + ALONE),
 
     # ch11 幻の少年
     (31, 'そのとき、アーロンは、ある光景を見た。', 's', ARONT + ', eyes opening wide in the dark, a soft glow on his face,' + ALONE),
@@ -241,6 +252,7 @@ LINES = [
     (38, '手がすべれば、まっさかさまに落ちる。', 'l', 'close-up of a single dusty left hand gripping a climbing rope tightly' + NOP),
     (38, '1メートル、また1メートル。', 'l', ARONW + ', halfway down a tall sandstone cliff on a rope, small figure,' + ALONE),
     (38, 'ついに、彼の足が、崖の下の地面に着いた。', 'c', ARONW + ', landing at the bottom of the cliff, knees buckling,' + ALONE),
+    (38, 'ここまで、ロープとハーネスを持ってきていたことが、彼の命を救った。', 'l', 'close-up of a climbing harness and a rope through a belay device on a sandstone cliff' + NOP),
     (39, '崖の下には、雨水がたまった、小さな水たまりがあった。', 's', 'a small muddy rainwater pool at the bottom of a desert canyon' + NOP),
     (39, 'アーロンは、むさぼるように水を飲んだ。', 'l', ARONW + ', kneeling and drinking from a muddy pool,' + ALONE),
     (39, 'そして、焼けつくような日差しの中を、歩き始めた。', 'l', ARONW + ', walking along a wide sandy canyon floor under a scorching sun,' + ALONE),
@@ -253,6 +265,8 @@ LINES = [
     (40, 'アーロンの目の前に、人影が見えた。', 'l', 'three distant hikers in a wide sandy canyon seen through heat haze'),
     (40, 'オランダから旅行に来ていた、3人の家族だった。', 'l', 'a Dutch family of three tourists (a father, a mother and a teenage son) hiking in a Utah canyon with backpacks and sun hats'),
     (40, 'アーロンは、声をふりしぼった。「助けてください。」', 'c', ARONW + ', calling out with a hoarse voice, raising his left hand, the family visible in the distance'),
+    (40, '家族は、思わず立ち止まった。目の前に現れた男の姿に、言葉を失った。', 'l', 'a Dutch family of three tourists stopping in shock in a sandy canyon, wide eyes'),
+    (40, 'アーロンは、落ち着いた声で、自分に何が起きたのかを説明したという。', 'c', ARONW + ', speaking calmly to a Dutch tourist father in a canyon'),
     (41, '家族は、アーロンに、水とクッキーを分けてくれた。', 's', 'a Dutch tourist father handing a water bottle to ' + ARONW + ' in a desert canyon, the mother and son nearby'),
     (41, 'そして、助けを呼ぶため、母親と息子が、先へと急いだ。', 'l', 'a woman and a teenage boy running ahead along a sandy canyon trail'),
     (41, 'そのころ、警察は、アーロンの車を手がかりに、ようやく捜索の範囲をしぼりこんでいた。', 'l', 'a police officer looking at an empty pickup truck parked at a remote desert trailhead'),
@@ -269,27 +283,30 @@ LINES = [
     (43, '1つ目は、パニックにならず、自分の持ち物と、水の量を、冷静に計算したこと。', 'l', 'a water bottle, burritos and a multi-tool laid out neatly on sand, top view' + NOP),
     (43, '2つ目は、岩を削る、滑車を作る。思いつく方法を、ひとつずつ、あきらめずに試したこと。', 'l', 'climbing rope rigged around a boulder in a slot canyon, a small knife beside it' + NOP),
     (43, 'そして3つ目は、生きる理由を、最後まで見失わなかったことである。', 'l', 'a dreamlike soft vision of a small boy running in warm light'),
-    (44, 'ただし、彼自身が、何度も語っている教訓がある。', 's', ARON + ', older, speaking calmly in a bright room, his right arm in a long sleeve,' + ALONE),
+    (43, '彼は、のちに、こう語っている。あの岩は、自分を罰するために落ちてきたのではない。自分を変えるために、そこにあったのだと。', 'l', ARON + ', older, sitting calmly on a red rock in the desert at sunset,' + ALONE),
+    (44, 'ただし、彼自身が、何度も語っている教訓がある。', 's', ARONF + ', older, speaking calmly in a bright room, his right arm in a long sleeve,' + ALONE),
     (44, 'それは、どこへ行くのか、必ず誰かに伝えておくこと。', 'l', 'a handwritten note on a kitchen table next to car keys, the writing blurred and unreadable' + NOP),
     (44, 'もし、行き先を伝えていれば、彼は、もっと早く見つけてもらえたかもしれない。', 'l', 'a search helicopter flying above canyons at dawn' + NOP),
     (44, 'たった一言の連絡が、命を救うこともあるのだ。', 'c', 'a phone glowing on a table with a short message being typed, text blurred and unreadable' + NOP),
-    (44, 'そして、どんな状況でも、最後まで、生きる道を探し続けることだと。', 'l', ARON + ', older, smiling gently in a bright room,' + ALONE),
+    (44, 'そして、どんな状況でも、最後まで、生きる道を探し続けることだと。', 'l', ARONF + ', older, smiling gently in a bright room,' + ALONE),
 
     # ch16 その後
-    (45, 'アーロンは、体重が18キロも減り、体の血液のおよそ4分の1を失っていた。', 's', ARONW + ', lying in a hospital bed, pale, eyes open,' + ALONE),
-    (45, 'しかし、命は助かった。', 'l', ARON + ', in a hospital bed, his mother holding his left hand, tears, soft light'),
+    (45, 'アーロンは、体重が18キロも減り、体の血液のおよそ4分の1を失っていた。', 's', ARONF + ', gaunt and pale, in a hospital gown, his right arm bandaged in white under the blanket, no blood, lying in a hospital bed, pale, eyes open,' + ALONE),
+    (45, 'しかし、命は助かった。', 'l', ARONF + ', in a hospital bed, his mother holding his left hand, tears, soft light'),
     (45, '医師たちは、彼が生きていたこと自体が、奇跡だと驚いた。', 'l', 'doctors in a hospital corridor talking in surprise'),
     (45, 'その後、国立公園の職員たちが、岩の下から、彼の腕を取り出した。', 's', 'park rangers with ropes and a hydraulic jack working around a boulder in a slot canyon, no body parts visible'),
     (45, '岩を動かすのに、13人がかりで、機械を使っても、大変な作業だったという。', 'l', 'many rangers straining together with a winch to move a huge boulder in a slot canyon'),
-    (45, '半年後、28歳の誕生日に、アーロンは、あの場所を再び訪れた。', 'l', ARON + ', six months later, in a jacket, standing quietly before the boulder in the slot canyon, his right sleeve empty,' + ALONE),
+    (45, '半年後、28歳の誕生日に、アーロンは、あの場所を再び訪れた。', 'l', ARONF + ', six months later, in a jacket, standing quietly before the boulder in the slot canyon, his right sleeve empty,' + ALONE),
     (46, '2004年、アーロンは、この体験を本にまとめた。', 's', 'a desk with a laptop and stacks of manuscript pages, a climbing rope coiled beside it, no readable text' + NOP),
     (46, '日本でも『奇跡の6日間』という題で出版され、2010年には、映画『127時間』として公開された。', 'l', 'people in a dark cinema watching a red desert canyon on a big screen, silhouettes, no readable text'),
     (46, '映画は、アカデミー賞の6部門にノミネートされ、世界中で話題になった。', 'l', 'a golden film award statuette silhouette on a dark stage with spotlights, no readable text' + NOP),
-    (46, 'アーロンは、義手をつけて、ふたたび山に登り始めた。', 'l', ARON + ', wearing a prosthetic right arm with an ice axe attachment, climbing a snowy Colorado peak,' + ALONE),
-    (46, 'そして2005年、彼は、あの目標を達成した。', 'l', ARON + ', with a prosthetic arm, standing on a snowy summit in winter, arms raised,' + ALONE),
+    (46, 'アーロンは、義手をつけて、ふたたび山に登り始めた。', 'l', ARONF + ', wearing a prosthetic right arm with an ice axe attachment, climbing a snowy Colorado peak,' + ALONE),
+    (46, '講演会では、世界中の人々に、あの6日間の体験を語り続けている。', 'l', ARONF + ', older, speaking on a stage to a large audience, warm stage light, no readable text'),
+    (46, '自分の失敗も、迷いも、すべて隠さずに話すその姿は、多くの人の心を動かした。', 'l', 'an audience listening intently in a dark hall, silhouettes, warm light'),
+    (46, 'そして2005年、彼は、あの目標を達成した。', 'l', ARONF + ', with a prosthetic arm, standing on a snowy summit in winter, arms raised,' + ALONE),
     (46, 'コロラド州の59座すべてに、冬に、たった1人で登ったのである。それは、世界で初めての記録だった。', 'l', 'a panorama of snowy Colorado 14,000-foot peaks at sunrise' + NOP),
-    (46, '2010年。アーロンに、男の子が生まれた。', 's', ARON + ', holding a newborn baby in his left arm, smiling, soft warm light, his right arm out of frame'),
-    (46, 'あの日、谷の底で見た幻の少年は、本当に、彼のもとへやって来たのである。', 'l', ARON + ' playing with a small blond boy in a sunny park, lifting him up, laughing'),
+    (46, '2010年。アーロンに、男の子が生まれた。', 's', ARONF + ', holding a newborn baby in his left arm, smiling, soft warm light, his right arm out of frame'),
+    (46, 'あの日、谷の底で見た幻の少年は、本当に、彼のもとへやって来たのである。', 'l', ARONF + ' playing with a small blond boy in a sunny park, lifting him up, laughing'),
     (46, 'すべてを失いかけた谷の底で、彼は、生きるための、たった1つの道を、自分の手で切り開いた。', 'c', 'sunlight pouring into an empty narrow red slot canyon, hope' + NOP),
     (46, 'このチャンネルでは、実際に起きた極限のサバイバルを記録している。', 's', 'a dark archive room with shelves of case files, one file open under a single desk lamp'),
     (46, '次の記録を見逃さないよう、チャンネル登録をお願いしたい。', 'x', 'the case file closing, the desk lamp switching off, darkness'),
@@ -302,7 +319,7 @@ STYLE = ("Japanese gekiga manga illustration style (hand-drawn comic art, NOT ph
          "ONE single full-frame illustration showing one continuous scene (absolutely NO comic panels, "
          "NO split screen, NO inset frames, NO borders), dramatic high contrast cinematic lighting, serious documentary mood, "
          "not gory, no blood, no wounds, no injuries shown, no body parts, no corpses, no speech bubbles, no text, no letters, no captions, no logos")
-TTS_SPEED = 1.0
+TTS_SPEED = 0.95
 TTS_SPEAKER = 11  # 玄野武宏（ノーマル）— 11/15 ユーザー指定(B)。以後の回もこれ
 TTS_INTONATION = 1.1
 READINGS = {"尿": "にょう", "鈍い": "にぶい", "義手": "ぎしゅ", "幻": "まぼろし", "一口": "ひとくち"}

@@ -11,7 +11,9 @@ EZE = "Ezequiel, a thin 22-year-old Mexican man with short black hair, wearing a
 BOAT = "a 7-meter open white fiberglass fishing skiff (panga) with a large white icebox in the middle and no roof"
 BOATD = "a 7-meter open white fiberglass fishing skiff with a large white icebox and a broken outboard motor"
 SEA = "the endless open Pacific Ocean, no land in sight"
-TWO = ", only these two men in the boat, no other people"
+TWO = (", the only other person in the boat is Ezequiel, a thin YOUNG 22-year-old with short black hair, clean-shaven, no mustache, no cap, in a WHITE T-shirt and BLUE shorts; only these two men in the boat, no other people")
+BOTH = ", aboard are " + ALV + " and " + EZE + ", only these two men in the boat, no other people"
+BOTHL = ", aboard are Alvarenga in a faded RED T-shirt with curly black hair and a growing black beard, and " + EZE + ", only these two men, no other people"
 ALONE = ", he is completely alone, no other people"
 NOP = ", no people"
 
@@ -42,8 +44,8 @@ LINES = [
     (1, '男の名は、ホセ・サルバドール・アルバレンガ。', 'l', 'portrait of ' + ALVL + ', staring with wild exhausted eyes' + ALONE),
     (2, '彼は、メキシコの海岸から漁に出たまま、太平洋を流され続けていた。', 's', 'a map-like view of the Pacific Ocean from Mexico to the Marshall Islands, a dotted line across the ocean, no readable text' + NOP),
     (2, 'その距離、およそ1万キロ。', 'l', SEA + ', a tiny boat in the vast ocean seen from high above' + NOP),
-    (2, '漂流した日数は、438日。1年と2か月以上である。', 'l', BOATD + ' drifting under a huge starry sky' + NOP),
-    (2, '食料も、水も、通信手段もない、屋根のない小さなボートで。', 'c', BOATD + ' baking under the blazing sun on a flat ocean' + NOP),
+    (2, '漂流した日数は、438日。1年と2か月以上である。', 'l', ALVL + ' lying on his back in the drifting skiff under a huge starry sky, seen from above' + ALONE),
+    (2, '食料も、水も、通信手段もない、屋根のない小さなボートで。', 'c', ALVL + ' squinting under the blazing sun in the roofless skiff on a flat ocean, cracked lips' + ALONE),
     (3, 'なぜ、彼は生き延びることができたのか。', 's', 'close-up of ' + ALVL + '\'s eyes, determined' + ALONE),
     (3, 'そして、一緒に海に出た、もう1人の若者は、どうなったのか。', 'l', 'an empty spot in the bow of a small open boat at sunset, a white T-shirt folded on the seat' + NOP),
     (3, 'これは、太平洋を漂流した漁師の、438日間の記録である。', 'c', 'a lonely small boat on the Pacific at dawn, golden light' + NOP),
@@ -57,7 +59,7 @@ LINES = [
     (4, 'エルサルバドルは、中米でいちばん小さな国。漁業は、海辺の人たちの大切な仕事だった。', 'l', 'a small fishing port in El Salvador with colorful boats and pelicans' + NOP),
     (5, 'アルバレンガは、腕のいい漁師だった。', 's', ALV + ' standing proudly in a fishing skiff holding a big fish' + ALONE),
     (5, '小さなボートで沖へ出て、サメやシイラを釣り上げる。', 'l', ALV + ' pulling a long fishing line from a small boat on the ocean' + ALONE),
-    (5, 'ひとたび漁に出れば、一晩から2日ほど、海の上で過ごすのが普通だった。', 'l', BOAT + ' on the ocean at night under the stars, a lamp glowing' + NOP),
+    (5, 'ひとたび漁に出れば、一晩から2日ほど、海の上で過ごすのが普通だった。', 'l', ALV + ' fishing at night from his skiff under a glowing lamp, stars above' + ALONE),
     (5, '海の怖さも、よく知っているつもりだった。', 'c', ALV + ' looking at a cloudy horizon from the beach, confident' + ALONE),
     (5, '家族とは遠く離れ、海と仕事だけの毎日だった。', 'l', ALV + ' sitting alone on the edge of a wooden pier at dusk, looking at the sea' + ALONE),
     (6, '2012年11月。アルバレンガは、いつものように漁に出る準備をしていた。', 's', ALV + ' loading ice and fishing gear into a skiff on the beach' + ALONE),
@@ -67,7 +69,7 @@ LINES = [
     (6, 'それでもアルバレンガは、すぐ戻るのだから大丈夫だと考えた。', 'l', ALV + ' patting ' + EZE + ' on the shoulder, reassuring him' + TWO),
 
     # ch3 出港
-    (7, '2012年11月17日。2人を乗せたボートは、メキシコ南部の海岸を出発した。', 's', BOAT + ' leaving a Mexican beach at dawn, two men aboard' + TWO),
+    (7, '2012年11月17日。2人を乗せたボートは、メキシコ南部の海岸を出発した。', 's', BOAT + ' leaving a Mexican beach at dawn, seen from close behind' + BOTH),
     (7, 'ボートの長さは、およそ7メートル。屋根もない、小さな漁船である。', 'l', BOAT + ' seen from above on calm blue water' + NOP),
     (7, '積んでいたのは、燃料と、飲み水、釣り針、そして魚を冷やすための大きな氷の箱。', 'l', 'fuel cans, water jugs, fishing hooks, knives and a big white icebox inside a small open boat' + NOP),
     (7, '予定は、およそ30時間の漁。翌日には、村に戻るはずだった。', 'c', ALV + ' and ' + EZE + ' sitting in the boat, smiling, heading out to sea' + TWO),
@@ -82,10 +84,10 @@ LINES = [
     (9, 'このあたりの海では、この季節、強い北風が吹き荒れることがある。', 's', 'strong winds whipping the ocean surface into white caps' + NOP),
     (9, '経験のある漁師ほど、その怖さを知っていた。', 'l', 'close-up of ' + ALV + '\'s face watching the dark sky, serious' + ALONE),
     (9, 'アルバレンガは、急いで村に戻ろうとした。', 'c', ALV + ' steering the outboard motor hard toward the coast, waves rising' + TWO),
-    (9, 'しかし、ボートは岸から、すでに100キロ近くも離れていた。', 'l', BOAT + ' far out at sea, no coast visible, dark clouds approaching' + TWO),
+    (9, 'しかし、ボートは岸から、すでに100キロ近くも離れていた。', 'l', BOAT + ' far out at sea, no coast visible, dark clouds approaching' + BOTH),
 
     # ch4 嵐
-    (10, 'だが、嵐は、あっという間に2人のボートを飲みこんだ。', 's', BOAT + ' tossed by huge storm waves under a black sky, rain lashing' + TWO),
+    (10, 'だが、嵐は、あっという間に2人のボートを飲みこんだ。', 's', BOAT + ' tossed by huge storm waves under a black sky, rain lashing' + BOTH),
     (10, '高い波が、何度もボートを打ちつける。', 'l', 'a giant wave crashing over a small open boat in a violent storm' + NOP),
     (10, '2人は、必死で水をくみ出し続けた。', 'l', ALV + ' and ' + EZE + ' bailing water out of the boat with buckets in heavy rain' + TWO),
     (10, 'ボートを軽くするため、釣ったばかりの魚も、海に捨てた。その量は、およそ500キロ。', 'c', ALV + ' throwing fish overboard from the icebox in a storm' + TWO),
@@ -97,13 +99,13 @@ LINES = [
     (11, 'GPSも、壊れて動かなくなっていた。', 'c', 'a broken GPS device with a dark screen on the wet floor of a boat' + NOP),
     (11, 'アルバレンガは、壊れた無線とGPSを、怒りにまかせて海に投げ捨てたという。', 'l', ALV + ' throwing a broken radio into the stormy sea in anger' + TWO),
     (12, 'エンジンは、とうとう止まった。', 's', 'close-up of a dead outboard motor on the back of a skiff, waves splashing' + NOP),
-    (12, '嵐は、5日間も続いたという。', 'l', BOAT + ' in the storm at night, lightning in the distance' + TWO),
+    (12, '嵐は、5日間も続いたという。', 'l', BOAT + ' in the storm at night, lightning in the distance' + BOTH),
     (12, '村からは、捜索の船が出された。', 'l', 'a small search boat on a stormy sea, poor visibility, rain'),
     (12, 'しかし、視界が悪く、2日ほどで捜索は打ち切られてしまった。', 'c', 'a gray empty stormy sea with fog, no boats visible' + NOP),
-    (12, '2人を待っていたのは、あまりにも長い漂流だった。', 'c', BOATD + ' alone on a gray ocean after the storm' + NOP),
+    (12, '2人を待っていたのは、あまりにも長い漂流だった。', 'c', BOATD + ' small on a vast gray ocean after the storm, seen from far away' + BOTH),
 
     # ch5 流される
-    (13, '嵐がおさまったとき、まわりには、何も見えなかった。', 's', BOATD + ' on a calm gray ocean after a storm, no land anywhere' + TWO),
+    (13, '嵐がおさまったとき、まわりには、何も見えなかった。', 's', BOATD + ' on a calm gray ocean after a storm, no land anywhere' + BOTHL),
     (13, '陸地も、ほかの船も。', 'l', SEA + ', calm and empty, a flat horizon' + NOP),
     (13, 'エンジンも、オールも、帆もない。ボートは、ただ海の流れに運ばれていくだけだった。', 'l', BOATD + ' drifting on a slow ocean current' + NOP),
     (13, '風と海流は、2人を、陸とは反対の方向、太平洋の沖へと押し流していた。', 'c', 'a wide view of the Pacific Ocean, a tiny boat being carried westward by the current' + NOP),
@@ -117,7 +119,7 @@ LINES = [
     (15, '昼は、焼けつくような日差し。', 's', 'a blazing tropical sun over a small open boat on a flat ocean' + NOP),
     (15, '屋根のないボートの上には、日差しをさえぎるものが何もない。', 'l', ALV + ' and ' + EZE + ' squinting under the blazing sun, sweating' + TWO),
     (15, '2人は、氷の箱の中に入って、日差しから身を守った。', 'l', EZE + ' curled up inside a big open white icebox in a boat, shading himself from the sun'),
-    (15, '夜になると、今度は、寒さが2人を襲った。', 'c', BOATD + ' on the dark ocean at night, two men huddled together' + TWO),
+    (15, '夜になると、今度は、寒さが2人を襲った。', 'c', BOATD + ' on the dark ocean at night, the two men huddled together against the cold' + BOTHL),
     (15, '風の強い夜には、2人で身を寄せ合って、寒さに耐えた。', 'l', ALV + ' and ' + EZE + ' huddled together under the night sky, shivering' + TWO),
 
     # ch6 素手の漁
@@ -168,7 +170,7 @@ LINES = [
     (24, 'ボートの上で、2人は、いろいろな話をした。', 's', ALV + ' and ' + EZE + ' sitting and talking in the boat at sunset' + TWO),
     (24, '家族のこと。故郷のこと。帰ったら、何を食べたいか。', 'l', 'a dreamlike vision of a family dinner table with tortillas and beans, warm light, faces indistinct'),
     (24, 'エセキエルは、母親のことを、よく口にしていたという。', 'l', 'close-up of ' + EZE + ' looking at the horizon, missing home'),
-    (24, '話をすることが、2人の心を支えていた。', 'c', BOATD + ' at sunset, two small silhouettes in it' + TWO),
+    (24, '話をすることが、2人の心を支えていた。', 'c', BOATD + ' at sunset, the two men sitting and talking' + BOTHL),
     (24, '時には、2人で、故郷の歌を口ずさむこともあった。', 'l', ALV + ' and ' + EZE + ' singing softly together in the boat at night under stars' + TWO),
 
     # ch9 通り過ぎる船
@@ -182,14 +184,14 @@ LINES = [
     (26, '一度だけ、船の甲板に立つ人が、手を振り返したように見えたこともあった。', 'l', 'a container ship passing at a distance, a tiny figure on the deck'),
     (26, 'それでも、船は止まらなかった。', 'c', 'the stern of a large ship moving away, its wake spreading on the sea' + NOP),
     (26, '夜には、遠くを通る船の明かりも見えた。', 'l', 'lights of a distant ship on a dark night ocean' + NOP),
-    (26, 'しかし、ボートには、明かりをともす道具もなかった。', 'c', BOATD + ' in total darkness on the night sea' + NOP),
+    (26, 'しかし、ボートには、明かりをともす道具もなかった。', 'c', BOATD + ' in near darkness on the night sea, faintly lit by moonlight' + BOTHL),
     (27, '船が見えるたびに、希望がわき、そして、消えていく。', 's', ALV + ' sitting down slowly in the boat, watching a ship disappear' + TWO),
-    (27, 'その繰り返しが、2人の心を、少しずつ削っていった。', 'l', BOATD + ' alone on the ocean at dusk' + NOP),
+    (27, 'その繰り返しが、2人の心を、少しずつ削っていった。', 'l', BOATD + ' at dusk' + BOTHL),
     (27, 'それでもアルバレンガは、「次の船は、きっと止まる」と、自分に言い聞かせた。', 'c', 'close-up of ' + ALV + '\'s determined eyes scanning the horizon' + ALONE),
     (27, 'それでも、エセキエルの顔からは、少しずつ笑顔が消えていった。', 'l', 'close-up of ' + EZE + ' staring blankly at the sea, losing hope'),
 
     # ch10 相棒の異変
-    (28, '漂流が始まって、何か月かがたったころ。', 's', BOATD + ' drifting under a hazy sky' + TWO),
+    (28, '漂流が始まって、何か月かがたったころ。', 's', BOATD + ' drifting under a hazy sky' + BOTHL),
     (28, 'エセキエルの様子が、おかしくなり始めた。', 'l', EZE + ' lying weakly in the boat, pale and sick'),
     (28, '生の海鳥を食べたあと、ひどく体調をくずしたのだという。', 'l', EZE + ' clutching his stomach in pain in the boat'),
     (28, 'それ以来、エセキエルは、食べ物を口にしなくなった。', 'c', EZE + ' turning his face away from a piece of food offered by a hand'),
@@ -209,7 +211,7 @@ LINES = [
     (31, 'アルバレンガは、ひとりになった。', 's', ALVL + ' sitting alone in the boat, head in his hands' + ALONE),
     (31, '彼は、しばらくのあいだ、エセキエルが、まだそこにいるかのように話しかけ続けたという。', 'l', ALVL + ' talking softly toward the empty bow of the boat' + ALONE),
     (31, 'そして数日後、エセキエルを、静かに海へと送った。', 'l', 'a white T-shirt floating gently on calm ocean water at dawn, soft light' + NOP),
-    (31, '広い海の上で、話し相手は、もう誰もいなかった。', 'c', BOATD + ' alone on the vast ocean seen from high above' + NOP),
+    (31, '広い海の上で、話し相手は、もう誰もいなかった。', 'c', ALVL + ' sitting alone in the skiff on the vast ocean, tiny figure seen from high above' + ALONE),
     (31, '海の上の静けさが、これほど重く感じられたことはなかった。', 'l', 'a perfectly calm empty ocean at noon, oppressive silence' + NOP),
     (32, 'それから何日も、アルバレンガは、深い絶望の中にいた。', 's', ALVL + ' lying in the boat staring blankly at the sky' + ALONE),
     (32, '自分も、もう終わりにしてしまおうか。そう考えたこともあったという。', 'l', 'close-up of ' + ALVL + '\'s hollow eyes, despair' + ALONE),
@@ -219,7 +221,7 @@ LINES = [
     (32, '母親に会うまでは、死ねない。彼は、そう心に決めた。', 'l', 'close-up of ' + ALVL + '\'s face at dawn, a new determination in his eyes' + ALONE),
     (33, 'アルバレンガは、ふたたび、海に手を入れ始めた。', 's', ALVL + ' reaching into the sea to catch fish' + ALONE),
     (33, '魚をつかまえ、鳥をつかまえ、雨水をためる。', 'l', ALVL + ' collecting rainwater in buckets' + ALONE),
-    (33, '1日1日を、ただ生きる。それだけを考えるようにした。', 'c', BOATD + ' on the ocean at sunrise' + NOP),
+    (33, '1日1日を、ただ生きる。それだけを考えるようにした。', 'c', ALVL + ' watching the sunrise from the skiff, calm expression' + ALONE),
     (33, '生きて帰る。それが、エセキエルとの約束を果たす、ただ1つの道だった。', 'l', 'close-up of ' + ALVL + '\'s hands tightening a rope, determined' + ALONE),
 
     # ch12 月を数える
@@ -242,7 +244,7 @@ LINES = [
     (36, 'ある時は、大きなサメが、ボートのまわりを何日も泳ぎ回ったこともあった。', 'l', 'a large shark fin circling near a small drifting boat' + NOP),
 
     # ch13 1年が過ぎて
-    (37, '漂流が始まって、およそ1年。', 's', BOATD + ', now old and faded, drifting on a calm ocean' + NOP),
+    (37, '漂流が始まって、およそ1年。', 's', ALVL + ' in the old faded skiff drifting on a calm ocean, one year adrift' + ALONE),
     (37, 'ボートは、メキシコから、はるか西へと流されていた。', 'l', 'a wide view of the western Pacific, a tiny boat in the middle' + NOP),
     (37, 'アルバレンガの髪とひげは、長く伸び放題になっていた。', 'l', 'close-up of ' + ALVL + ', long hair and beard blowing in the wind' + ALONE),
     (37, '体は、骨が浮き出るほど、やせ細っていた。', 'c', ALVL + ' sitting in the boat, ribs showing under the torn shirt' + ALONE),
@@ -256,7 +258,7 @@ LINES = [
     (38, 'それでも、心が折れそうになる日は、何度もあった。', 'l', ALVL + ' sitting slumped in the boat under a gray sky' + ALONE),
     (38, 'そんなとき彼は、家族の顔と、エセキエルとの約束を思い出したという。', 'c', 'close-up of ' + ALVL + ' closing his eyes, remembering, faint smile' + ALONE),
     (39, '満月を数えて、15回目。', 's', 'a full moon rising over the dark Pacific Ocean' + NOP),
-    (39, '漂流は、すでに1年と2か月を超えていた。', 'l', BOATD + ' drifting under a pink morning sky' + NOP),
+    (39, '漂流は、すでに1年と2か月を超えていた。', 'l', ALVL + ' lying weakly in the skiff under a pink morning sky' + ALONE),
     (39, 'そのとき、海の色が、少し変わったことに、彼は気づいた。', 'c', 'the open ocean changing from deep blue to lighter turquoise, birds in the sky' + NOP),
     (39, '頭の上を飛ぶ鳥の数も、少しずつ増えていた。', 'l', 'many seabirds flying above a small boat in the sky' + NOP),
     (39, '陸地が近いのかもしれない。アルバレンガの胸に、かすかな希望がわいた。', 'c', 'close-up of ' + ALVL + '\'s eyes widening with hope' + ALONE),
@@ -267,8 +269,8 @@ LINES = [
     (40, 'マーシャル諸島の、エボン環礁と呼ばれる、小さな島々だった。', 'l', 'Ebon Atoll in the Marshall Islands seen from above, a ring of small green islets in a turquoise lagoon' + NOP),
     (40, 'アルバレンガは、ボートと海をつないでいたブイのロープを、ナイフで切った。', 'c', ALVL + ' cutting a rope with a knife at the edge of the boat, the island in the distance' + ALONE),
     (40, 'ここで島を逃せば、ボートは、また広い海へと流されてしまう。', 'l', 'a tiny island slipping past a drifting boat, ocean beyond' + NOP),
-    (41, 'ボートは、波に乗って、島のほうへ近づいていく。', 's', BOATD + ' riding a wave toward a reef and a palm-lined beach' + NOP),
-    (41, 'サンゴ礁の上で、ボートは大きく揺れた。', 'l', BOATD + ' tossed by breaking waves over a coral reef' + NOP),
+    (41, 'ボートは、波に乗って、島のほうへ近づいていく。', 's', ALVL + ' gripping the side of the skiff as it rides a wave toward a reef and a palm-lined beach' + ALONE),
+    (41, 'サンゴ礁の上で、ボートは大きく揺れた。', 'l', ALVL + ' holding on as the skiff is tossed by breaking waves over a coral reef' + ALONE),
     (41, 'ボートを捨てることは、大きな賭けだった。しかし、ほかに道はなかった。', 'l', ALVL + ' standing on the edge of the boat, ready to jump into the sea' + ALONE),
     (41, 'アルバレンガは、海に飛びこみ、浜辺へと泳いだ。', 'l', ALVL + ' swimming through surf toward a white sand beach' + ALONE),
     (41, 'サンゴで足を切らないよう、必死で波をかわした。', 'l', ALVL + ' struggling through waves over a coral reef' + ALONE),
